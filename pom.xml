@@ -14,6 +14,7 @@
     <properties>
 
         <org.spring.boot.version>1.5.8.RELEASE</org.spring.boot.version>
+        <spring.swagger.version>2.2.2</spring.swagger.version>
     </properties>
 
     <parent>
@@ -29,10 +30,18 @@
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${org.spring.boot.version}</version>
             </dependency>
-            <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
-            <!--</dependency>-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${spring.swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${spring.swagger.version}</version>
+            </dependency>
+
+
         </dependencies>
 
     </dependencyManagement>
