@@ -1,14 +1,12 @@
 package com.mars.user.web;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.mars.user.dto.UserDTO;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Package com.mars.user.web
  * @Description:
- * @Author ken
+ * @author ken
  * @Date 2017/11/11 4:07
  */
 @RestController
@@ -21,7 +19,22 @@ public class UserAction {
     }
 
     @GetMapping
-    public String getUsers() {
+    public String getUsers(UserDTO userDTO) {
         return "123123";
+    }
+
+    @PutMapping
+    public String updateUser(UserDTO userDTO) {
+        return "ok";
+    }
+
+    @PostMapping
+    public String createUser(UserDTO userDTO) {
+        return "ok";
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public String deleteUser(@PathVariable(name = "id") String id) {
+        return "ok";
     }
 }

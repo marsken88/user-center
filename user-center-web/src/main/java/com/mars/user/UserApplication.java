@@ -6,6 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * @author MarsKen
  * @Package com.mars.user
  * @Description:
  * @Author ken
