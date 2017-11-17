@@ -1,15 +1,14 @@
-package com.mars.user.dto;
+package com.mars.user.po;
 
 import java.io.Serializable;
 
 /**
- * @Package com.mars.user.dto
- * @Description:
  * @author ken
- * @Date 2017/11/11 22:35
+ * @Package com.mars.user.po
+ * @Description:
+ * @Date 2017/11/17 23:18
  */
-public class UserDTO implements Serializable {
-
+public class User implements Serializable{
     private Long userId;
     private String userName;
     private String userMobile;
@@ -49,7 +48,7 @@ public class UserDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "UserDTO{" +
+        return "User{" +
                 "userId=" + userId +
                 ", userName='" + userName + '\'' +
                 ", userMobile='" + userMobile + '\'' +

@@ -10,9 +10,15 @@
     <modules>
         <module>user-center-web</module>
         <module>user-center-model</module>
+        <module>user-center-service</module>
+        <module>user-center-interface</module>
     </modules>
     <packaging>pom</packaging>
+
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
         <org.spring.boot.version>1.5.8.RELEASE</org.spring.boot.version>
         <spring.swagger.version>2.2.2</spring.swagger.version>
     </properties>
@@ -40,24 +46,9 @@
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${spring.swagger.version}</version>
             </dependency>
-
-
         </dependencies>
-
     </dependencyManagement>
-    <!--<build>-->
-    <!--&lt;!&ndash; 配置java版本 不配置的话默认父类配置的是1.6&ndash;&gt;-->
-    <!--<plugins>-->
-    <!--<plugin>-->
-    <!--<artifactId>maven-compiler-plugin</artifactId>-->
-    <!--<version>3.1</version>-->
-    <!--<configuration>-->
-    <!--<source>1.8</source>-->
-    <!--<target>1.8</target>-->
-    <!--</configuration>-->
-    <!--</plugin>-->
-    <!--</plugins>-->
-    <!--</build>-->
+
     <build>
         <plugins>
             <plugin>
