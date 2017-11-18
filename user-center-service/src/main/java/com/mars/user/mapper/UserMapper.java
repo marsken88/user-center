@@ -14,6 +14,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Mapper
 public interface UserMapper {
+
+    /**
+     * 使用user对象对数据库插入
+     *
+     * @param user
+     */
     @Insert("insert into user ( id , userName , userMobile ) values ( #{userId} , #{userName} , #{userMobile} )")
     void insert(User user);
 }
