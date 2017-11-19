@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.Assert.*;
 
@@ -29,12 +31,19 @@ public class UserServiceImplTest extends AbstractCommonTest {
     }
 
     @Test
+    @Transactional
+    @Rollback
     public void insertUser() throws Exception {
         System.err.println("==================>>>>");
         UserDTO userDTO = new UserDTO();
-        userDTO.setUserId(12313231L);
+//        userDTO.setUserId(12313231L);
         userDTO.setUserName("ken");
+        userDTO.setUserMobile("13110101112212");
         userService.insertUser(userDTO);
     }
 
+    @Test
+    public void removeUser() throws Exception {
+        userService.removeUser(12313233L);
+    }
 }

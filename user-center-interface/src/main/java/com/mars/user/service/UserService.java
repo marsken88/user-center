@@ -18,4 +18,11 @@ public interface UserService {
      */
     void insertUser(UserDTO userDTO);
 
+    /**
+     * 删除用户
+     *
+     * @param userId
+     */
+    void removeUser(Long userId);
+
 }

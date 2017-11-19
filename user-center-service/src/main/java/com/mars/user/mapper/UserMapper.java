@@ -1,6 +1,7 @@
 package com.mars.user.mapper;
 
 import com.mars.user.po.User;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
@@ -20,6 +21,13 @@ public interface UserMapper {
      *
      * @param user
      */
-    @Insert("insert into user ( id , userName , userMobile ) values ( #{userId} , #{userName} , #{userMobile} )")
+    @Insert("insert into user ( id , user_name , user_mobile ) values ( #{userId} , #{userName} , #{userMobile} )")
     void insert(User user);
+
+    /**
+     * 删除用户
+     * @param userId
+     */
+    @Delete("delete from user where id = #{userId}")
+    void remove(Long userId);
 }
