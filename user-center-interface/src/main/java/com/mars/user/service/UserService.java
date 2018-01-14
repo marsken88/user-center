@@ -3,6 +3,8 @@ package com.mars.user.service;
 import com.mars.user.dto.UserDTO;
 import com.mars.user.po.User;
 
+import java.util.List;
+
 /**
  * @author ken
  * @Package com.mars.user.service
@@ -24,5 +26,12 @@ public interface UserService {
      * @param userId
      */
     void removeUser(Long userId);
+
+    /**
+     * 查询用户
+     *
+     * @return
+     */
+    List<UserDTO> getUsers();
 
 }

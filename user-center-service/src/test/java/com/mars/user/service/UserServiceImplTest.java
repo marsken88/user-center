@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 /**
@@ -46,4 +48,11 @@ public class UserServiceImplTest extends AbstractCommonTest {
     public void removeUser() throws Exception {
         userService.removeUser(12313233L);
     }
+
+    @Test
+    public void getUsers() throws Exception {
+        List<UserDTO> userDTOS = userService.getUsers();
+        System.err.println(userDTOS);
+    }
+
 }

@@ -7,6 +7,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author ken
  * @Package com.mars.user.service
@@ -30,5 +33,17 @@ public class UserServiceImpl implements UserService {
     @Override
     public void removeUser(Long userId) {
         userMapper.remove(userId);
+    }
+
+    @Override
+    public List<UserDTO> getUsers() {
+        List<User> users = userMapper.getUsers();
+        List<UserDTO> userDTOS = new ArrayList<>();
+        for (User user : users) {
+            UserDTO userDTO = new UserDTO();
+            BeanUtils.copyProperties(user, userDTO);
+            userDTOS.add(userDTO);
+        }
+        return userDTOS;
     }
 }

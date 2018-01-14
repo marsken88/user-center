@@ -14,8 +14,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
-public class UserApplication {
+public class UserWebApplication {
     public static void main(String[] args) {
-        SpringApplication.run(UserApplication.class, args);
+        SpringApplication.run(UserWebApplication.class, args);
     }
 }

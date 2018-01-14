@@ -4,7 +4,10 @@ import com.mars.user.po.User;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @author ken
@@ -30,4 +33,11 @@ public interface UserMapper {
      */
     @Delete("delete from user where id = #{userId}")
     void remove(Long userId);
+
+    /**
+     * 获取所有用户
+     * @return
+     */
+    @Select("select id user_name , user_mobile from user ")
+    List<User> getUsers();
 }
